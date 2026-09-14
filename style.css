@@ -1,18 +1,43 @@
+/* Variables par défaut : Mode Clair (Style GitHub léger) */
 body {
+  --bg-color: #f6f8fa;
+  --text-color: #24292f;
+  --header-bg: #ffffff;
+  --border-color: #d0d7de;
+  --link-hover: #0969da;
+
   font-family: system-ui, sans-serif;
   margin: 0;
   padding: 2rem;
-  background: #f6f8fa;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Styles pour le Header et la Navigation */
+/* Surcharge des variables : Mode Sombre */
+body[data-theme="dark"] {
+  --bg-color: #0d1117;
+  --text-color: #c9d1d9;
+  --header-bg: #161b22;
+  --border-color: #30363d;
+  --link-hover: #58a6ff;
+}
+
+/* Header & Navigation */
 header {
-  background-color: #ffffff;
-  border: 1px solid #d0d7de;
+  background-color: var(--header-bg);
+  border: 1px solid var(--border-color);
   border-radius: 6px;
   padding: 0.75rem 1.5rem;
   margin-bottom: 2rem;
   box-shadow: 0 1px 3px rgba(31, 35, 40, 0.05);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav ul {
@@ -20,24 +45,37 @@ nav ul {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 1.5rem; /* Espace entre les liens */
+  gap: 1.5rem;
 }
 
 nav a {
   text-decoration: none;
-  color: #24292f; /* Couleur de texte sombre style GitHub */
+  color: var(--text-color);
   font-weight: 500;
   font-size: 0.95rem;
   transition: color 0.2s ease;
 }
 
-/* Effet au survol des liens */
 nav a:hover {
-  color: #0969da; /* Bleu interactif */
+  color: var(--link-hover);
 }
 
+/* Bouton de changement de thème */
+#theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.2s, border-color 0.2s;
+}
 
+#theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
 
-
-
+body[data-theme="dark"] #theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
 
