@@ -4,3 +4,40 @@ body {
   padding: 2rem;
   background: #f6f8fa;
 }
+
+/* Styles pour le Header et la Navigation */
+header {
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(31, 35, 40, 0.05);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem; /* Espace entre les liens */
+}
+
+nav a {
+  text-decoration: none;
+  color: #24292f; /* Couleur de texte sombre style GitHub */
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+/* Effet au survol des liens */
+nav a:hover {
+  color: #0969da; /* Bleu interactif */
+}
+
+
+
+
+
+
